@@ -5,6 +5,7 @@ import DashboardHotel from "../components/dashBoard/DashboardHotel";
 import MakeAdmin from "../components/dashBoard/MakeAdmin";
 import UpdateHotel from "../components/dashBoard/UpdateHotel";
 import UserList from "../components/dashBoard/UserList";
+import PaymentForm from "../components/PaymentForm/PaymentForm";
 import Profile from "../components/Profile/Profile";
 import Success from "../components/reusable/Success";
 import Dashboard from "../layout/Dashboard/Dashboard";

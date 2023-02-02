@@ -1,7 +1,7 @@
 import React from "react";
 import { AiFillDelete, AiOutlineArrowLeft } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { removeFromCart } from "../features/cartSlice";
 import Footer from "../layout/Footer";
 import OurService from "./home/OurService/OurService";
@@ -9,6 +9,13 @@ import OurService from "./home/OurService/OurService";
 const Cart = () => {
   const { cart } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
+
+  const navigate = useNavigate();
+
+  const handleBookNow = () => {
+      dispatch(addToCart(hotelData));
+      navigate(`/booking/${hotelData._id}`, { state: categories });
+    };
 
   const CartCard = ({ hotel }) => {
     return (
@@ -21,6 +28,7 @@ const Cart = () => {
             <p className="underline">Go Back</p>
           </div>
         </Link>
+
         <section className="md:grid grid-cols-3 gap-4 pb-32">
           <section className="col-span-2 border-b pb-4 md:pb-0 bg-white p-4">
             <div className="flex gap-2">
@@ -28,7 +36,7 @@ const Cart = () => {
                 <div>
                   <img
                     src={hotel?.imageURL}
-                    className="w-96 h-32 md:w-32 md:h-32"
+                    className="w-96 h-32 md:w-32 md:h-32 rounded-md"
                     alt=""
                   />
                 </div>
@@ -39,6 +47,10 @@ const Cart = () => {
                   <AiFillDelete />
                   Remove
                 </button>
+
+                  <button onClick={handleBookNow} className="btn bg-[#7ED757] outline-none border-none text-white font-semibold text-md mb-4">
+                    Checkout Now
+                  </button>
               </div>
               <div>
                 <h3 className="text-black font-bold">{hotel?.title}</h3>

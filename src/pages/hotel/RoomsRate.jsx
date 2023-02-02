@@ -17,7 +17,7 @@ const RoomsRate = ({ categories, hotelData }) => {
   var hotelprice = Intl.NumberFormat().format(price);
 
   const dispatch = useDispatch();
-
+  
   const handleBookNow = () => {
     dispatch(addToCart(hotelData));
     navigate(`/booking/${hotelData._id}`, { state: categories });
