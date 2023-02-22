@@ -1,9 +1,10 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { hotelAPI_URL_Bandarban } from "./hotelsAPI_URL/hotelAPI_URL";
 
 export const hotelApi = createApi({
   reducerPath: "hotelApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://cht-travel-server-production.up.railway.app/",
+    baseUrl: hotelAPI_URL_Bandarban,
   }),
   tagTypes: ["Hotels"],
   endpoints: (builder) => ({

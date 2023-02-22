@@ -21,32 +21,26 @@ const About = () => {
 
   return (
     <div className="my-20 customContainer">
-      <div
-        className="lg:flex gap-8"
-        data-aos="fade-in"
-        data-aos-duration="1000"
-      >
-        <div className="md:w-1/2 md:flex space-x-4 space-y-4 md:space-y-4">
-          <div className="flex justify-center">
+      <div className="lg:flex flex-row-reverse gap-8">
+        <div className="mx-auto w-1/2 md:flex justify-between items-center space-x-4 space-y-4 md:space-y-4">
+          <div className="w-[280px]">
             <img
               src={chtTravelLogo}
-              className="rounded-lg"
-              alt=""
-              style={{ width: "300px", height: "300px" }}
+              className="rounded-lg w-full"
+              alt="company logo"
             />
           </div>
 
-          <div className="flex justify-center">
+          <div className="w-[280px]">
             <img
               src={bdGovtLogo}
-              className="rounded-lg"
-              alt=""
-              style={{ width: "300px", height: "300px" }}
+              className="rounded-lg w-full"
+              alt="dc logo"
             />
           </div>
         </div>
 
-        <div className="pt-10 md:pt-0 space-y-6 md:w-1/2">
+        <div className="pt-10 md:pt-0 space-y-6 w-1/2 mx-auto">
           <div className="space-y-4">
             <h2 className="text-2xl font-bold text-black">About us</h2>
             <p>
@@ -74,7 +68,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="flex justify-center mt-12">
+      <div className="w-[280px] mt-12 mx-auto">
         <Link to="/hotels">
           <button className="btn btn-primary flex items-center gap-2 w-56">
             Explore Now

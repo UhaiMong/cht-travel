@@ -5,7 +5,6 @@ import DashboardHotel from "../components/dashBoard/DashboardHotel";
 import MakeAdmin from "../components/dashBoard/MakeAdmin";
 import UpdateHotel from "../components/dashBoard/UpdateHotel";
 import UserList from "../components/dashBoard/UserList";
-import PaymentForm from "../components/PaymentForm/PaymentForm";
 import Profile from "../components/Profile/Profile";
 import Success from "../components/reusable/Success";
 import Dashboard from "../layout/Dashboard/Dashboard";
@@ -23,6 +22,8 @@ import Service from "../pages/Service";
 import Signup from "../pages/Signup";
 import AdminRoute from "../utils/AdminRoute";
 import PrivateRoute from "../utils/PrivateRoute.jsx";
+import TouristSpotList from "../pages/touristSpot/TouristSpotList";
+import LocalLanguages from "../pages/localLanguages/LocalLanguages";
 
 const routes = createBrowserRouter([
   {
@@ -77,6 +78,16 @@ const routes = createBrowserRouter([
       {
         path: "/hotels",
         element: <HotelList />,
+      },
+      {
+        path: "/tourist-spot",
+        element: <TouristSpotList/>
+      },
+      {
+        path: "/local-language",
+        element: <PrivateRoute>
+          <LocalLanguages/>
+        </PrivateRoute>
       },
       {
         path: "/booking/:id",

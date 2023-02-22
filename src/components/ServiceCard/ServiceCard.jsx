@@ -1,6 +1,5 @@
 import React from "react";
 import "./ServiceCard.css";
-import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 const ServiceCard = ({ service }) => {
   return (
     <div

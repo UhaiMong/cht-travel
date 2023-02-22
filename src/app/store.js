@@ -4,6 +4,8 @@ import { userApi } from "../api/userSlice";
 import authSlice from "../features/auth/authSlice";
 import bookingSlice from "../features/bookingSlice";
 import cartSlice from "../features/cartSlice";
+import languageFilterSlice from "../features/languageFilterSlice";
+import languageSlice from "../features/languageSlice";
 import searchSlice from "../features/searchSlice";
 
 export const store = configureStore({
@@ -14,6 +16,8 @@ export const store = configureStore({
     search: searchSlice,
     booking: bookingSlice,
     cart: cartSlice,
+    languages: languageSlice,
+    languageFilter: languageFilterSlice,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(hotelApi.middleware, userApi.middleware),

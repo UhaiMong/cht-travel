@@ -31,7 +31,7 @@ const Hotel = () => {
   const { data } = useGetSingleHotelQuery(id);
   const { searchQuery } = useSelector((state) => state.search);
 
-  let today = moment(new Date()).format("MMMM Do YYYY");
+  let today = moment(new Date()).format("MMMM DD YYYY");
   const startDate = searchQuery?.startDate;
   const endDate = searchQuery?.endDate;
 

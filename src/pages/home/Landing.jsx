@@ -29,8 +29,12 @@ const Landing = () => {
       </div>
 
       <Review />
-      <About />
-      <Contact />
+      <div data-aos="zoom-in" data-aos-duration="2000">
+        <About />
+      </div>
+      <div data-aos="zoom-in-up" data-aos-duration="2000">
+        <Contact />
+      </div>
       <Footer />
     </div>
   );
