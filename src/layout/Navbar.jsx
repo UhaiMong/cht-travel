@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import auth from "../firebase/firebase.config";
 import { logout } from "../features/auth/authSlice";
-import chtTravelLogoTwo from "../assets/images/cht-travel-logo-two.png";
-import manualRegUserImg from "../assets/images/manualRegUserImg.png";
 import { useMediaQuery } from "react-responsive";
 import { AiFillCar, AiOutlineShoppingCart } from "react-icons/ai";
 import { CiMap } from "react-icons/ci";
@@ -15,6 +13,9 @@ import { FaRegUserCircle } from "react-icons/fa";
 import { emptyCart } from "../features/cartSlice";
 import { useLocation } from "react-router-dom";
 import { useCheckAdminQuery } from "../api/userSlice";
+
+const manualRegUserImg = "https://i.ibb.co/vv70hPd/manual-Reg-User-Img.png";
+const chtTravelLogoTwo = "https://i.ibb.co/ypH6jJt/cht-travel-logo-two.png";
 
 const Navbar = () => {
   const { email, photoURL } = useSelector((state) => state?.auth);

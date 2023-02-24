@@ -30,9 +30,10 @@ const Filter = ({ setSearch }) => {
   const fetchData = async () => {
     try {
       const res = await axios.get(
-        "https://cht-travel-server-production.up.railway.app/hotels"
+        "https://cht-travel-server-repo.vercel.app/hotels-bdbn"
       );
       const data = res.data;
+      console.log(data);
       if (data) {
         const filteredData = data.filter((item) => item?.isAvailable === true);
         dispatch(setHotel(filteredData));
@@ -58,7 +59,7 @@ const Filter = ({ setSearch }) => {
     // call api
     // const fetchData = async () => {
     //   const res = await fetch(
-    //     "https://cht-travel-server-production.up.railway.app/hotels"
+    //     "https://cht-travel-server-repo.vercel.app/hotels"
     //   );
     //   const data = await res.json();
     //   const filteredData = data?.filter((item) => item?.isAvailable === true);

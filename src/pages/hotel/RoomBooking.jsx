@@ -1,7 +1,6 @@
 import React from "react";
 import { BsCheckCircleFill } from "react-icons/bs";
 import { RiChat1Fill } from "react-icons/ri";
-import hotelImgSmall from "../../assets/images/hotelImgSmall.jpg";
 import { useMediaQuery } from "react-responsive";
 import PaymentForm from "../../components/PaymentForm/PaymentForm";
 import { AiOutlineArrowLeft } from "react-icons/ai";
@@ -9,6 +8,8 @@ import { Link, useLocation, useParams } from "react-router-dom";
 import { useGetSingleHotelQuery } from "../../api/hotelSlice";
 import moment from "moment";
 import { useSelector } from "react-redux";
+
+const hotelImgSmall = "https://i.ibb.co/KsjT7XN/paharika-hotel.jpg";
 
 const RoomBooking = () => {
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });

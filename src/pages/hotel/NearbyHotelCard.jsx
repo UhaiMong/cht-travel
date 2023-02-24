@@ -1,7 +1,8 @@
 import React from "react";
 import { AiFillCar, AiFillStar } from "react-icons/ai";
 import { RiChat1Fill } from "react-icons/ri";
-import hotelImg from "../../assets/images/hotelImg.jpg";
+
+const hotelImg = "https://i.ibb.co/pQZ7RNY/hotelImg.jpg";
 
 const NearbyHotelCard = () => {
   return (

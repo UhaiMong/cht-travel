@@ -1,8 +1,9 @@
 import React from "react";
 import "./Review.css";
 import ScrollContainer from "react-indiana-drag-scroll";
-import userImg from "../../../assets/images/userImg.jpg";
 import { AiFillStar } from "react-icons/ai";
+
+const userImg = "https://i.ibb.co/vv70hPd/manual-Reg-User-Img.png";
 
 const Review = () => {
   const data = [

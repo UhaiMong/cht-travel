@@ -1,7 +1,9 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import profileCoverImg from "../../assets/images/profileCoverImg.jpg";
-import manualRegUserImg from "../../assets/images/manualRegUserImg.png";
+
+const profileCoverImg = "https://i.ibb.co/ZSDHv17/profile-Cover-Img.jpg";
+const manualRegUserImg = "https://i.ibb.co/vv70hPd/manual-Reg-User-Img.png";
+
 const Profile = () => {
   const { email, photoURL, displayName, role } = useSelector(
     (state) => state?.auth

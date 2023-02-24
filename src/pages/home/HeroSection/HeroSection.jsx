@@ -1,9 +1,9 @@
 import React from "react";
 import "./HeroSection.css";
-import heroimg from "../../../assets/images/heroimg.png";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import Typed from "react-typed";
+const heroImg = "https://i.ibb.co/Kqh4fds/heroimg.png";
 const HeroSection = () => {
   return (
     <div className="md:py-20 mt-20 md:pb-10 hero-section">
@@ -45,7 +45,7 @@ const HeroSection = () => {
           data-aos="fade-left"
         >
           <div className="hero-img">
-            <img src={heroimg} className="w-full" alt="" />
+            <img src={heroImg} className="w-full" alt="" />
           </div>
         </div>
       </div>

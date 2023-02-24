@@ -12,7 +12,7 @@ const UpdateHotel = () => {
   useEffect(() => {
     async function makeGetRequest() {
       let res = await axios.get(
-        `https://cht-travel-server-production.up.railway.app/hotel/${id}`
+        `https://cht-travel-server-repo.vercel.app/hotel/${id}`
       );
       let data = res.data;
       setData(data);

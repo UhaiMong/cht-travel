@@ -7,7 +7,7 @@ import toast from "react-hot-toast";
 import { createUser, googleLogin } from "../features/auth/authSlice";
 import { FcGoogle } from "react-icons/fc";
 import { FiChevronLeft } from "react-icons/fi";
-import chtTravelLogoTwo from "../assets/images/cht-travel-logo-two.png";
+const chtTravelLogoTwo = "https://i.ibb.co/ypH6jJt/cht-travel-logo-two.png";
 import Footer from "../layout/Footer";
 import { useAddUserMutation, useUpdateUserMutation } from "../api/userSlice";
 

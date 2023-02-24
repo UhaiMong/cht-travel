@@ -1,5 +1,5 @@
 import React from "react";
-import paymentGatewayImg from "../assets/images/payment-gateway.png";
+const paymentGatewayImg = "https://i.ibb.co/SNB8mGd/payment-gateway.png";
 
 const Footer = () => {
   let currentYear = new Date().getFullYear();

@@ -8,7 +8,7 @@ const initialState = {
 };
 
 export const getLanguages = createAsyncThunk("languages/getLanguages", async () => {
-    const res = await fetch("http://localhost:5000/local-language");
+    const res = await fetch("https://cht-travel-server-repo.vercel.app/local-language");
     const data = await res.json();
     return data;
 })

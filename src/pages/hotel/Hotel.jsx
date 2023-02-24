@@ -29,6 +29,7 @@ const Hotel = () => {
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
   const { id } = useParams();
   const { data } = useGetSingleHotelQuery(id);
+  console.log(data)
   const { searchQuery } = useSelector((state) => state.search);
 
   let today = moment(new Date()).format("MMMM DD YYYY");
@@ -52,7 +53,7 @@ const Hotel = () => {
       </div>
     );
   };
-
+// SERVICE NAV
   const ServicesNav = () => {
     return (
       <>

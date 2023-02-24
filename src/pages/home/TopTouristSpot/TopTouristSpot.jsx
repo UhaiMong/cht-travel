@@ -1,7 +1,7 @@
 import React from "react";
 import "./TopTouristSpot.css";
 import ScrollContainer from "react-indiana-drag-scroll";
-import spotImg from "../../../assets/images/spot.jpg";
+const spotImg = "https://i.ibb.co/bWqDGKg/image1.jpg";
 
 const TopTouristSpot = () => {
   const data = [

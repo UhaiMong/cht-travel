@@ -9,7 +9,7 @@ const initialState = {
 
 export const getBookings = createAsyncThunk("auth/getBookings", async () => {
   const res = await fetch(
-    "https://cht-travel-server-production.up.railway.app/api/bookings"
+    "https://cht-travel-server-repo.vercel.app/api/bookings"
   );
   const data = await res.json();
   return data;
@@ -42,6 +42,6 @@ const bookingSlice = createSlice({
   },
 });
 
-export const {} = bookingSlice.actions;
+export const { } = bookingSlice.actions;
 
 export default bookingSlice.reducer;

@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import Filter from "../components/reusable/Filter";
 import { BsFillInfoCircleFill } from "react-icons/bs";
 import SuggestedHotelCard from "../components/SuggestedHotel/SuggestedHotelCard";
-import staticMapImg from "../assets/images/staticMapImg.png";
 import { Link } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import { useDispatch, useSelector } from "react-redux";
 import { getHotel } from "../features/searchSlice";
 import Loading from "../components/reusable/Loading";
+
+const staticMapImg = "https://i.ibb.co/w4WJm7b/static-Map-Img.png";
 
 const HotelList = () => {
   const [search, setSearch] = useState("");

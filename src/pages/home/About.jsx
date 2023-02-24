@@ -1,8 +1,8 @@
 import React from "react";
 import { AiOutlineDoubleRight } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import chtTravelLogo from "../../assets/images/cht-travel-logo.jpg";
-import bdGovtLogo from "../../assets/images/bdGovtLogo.png";
+const chtTravelLogo = "https://i.ibb.co/ypH6jJt/cht-travel-logo-two.png";
+const bdGovtLogo = "https://i.ibb.co/nnZjsq3/bd-Govt-Logo.png";
 const About = () => {
   const services = [
     { id: "1", service: "Hotel" },
@@ -32,11 +32,7 @@ const About = () => {
           </div>
 
           <div className="w-[280px]">
-            <img
-              src={bdGovtLogo}
-              className="rounded-lg w-full"
-              alt="dc logo"
-            />
+            <img src={bdGovtLogo} className="rounded-lg w-full" alt="dc logo" />
           </div>
         </div>
 

@@ -26,7 +26,7 @@ const PaymentForm = ({ price, title }) => {
     data.startDate = startDate;
     data.endDate = endDate;
 
-    fetch("https://cht-travel-server-production.up.railway.app/init", {
+    fetch("https://cht-travel-server-repo.vercel.app/init", {
       method: "POST",
       headers: {
         "content-type": "application/json",
