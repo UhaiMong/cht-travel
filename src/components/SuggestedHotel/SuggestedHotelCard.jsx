@@ -12,9 +12,10 @@ const SuggestedHotelCard = ({
   address,
   price,
   isTabletOrMobile,
+  categories,
 }) => {
   var price = Intl.NumberFormat().format(price);
-
+  // console.log(categories[0].facilities);
   return (
     <section className="grid grid-cols-8 mb-2 border hover:shadow-lg transition bg-white p-2 md:p-0">
       <div className="col-span-2">
@@ -44,18 +45,12 @@ const SuggestedHotelCard = ({
           <>
             <p>{address} | Map</p>
             <ul className="space-y-1">
-              <li className="flex items-center gap-1">
-                <BsFillInfoCircleFill />
-                Swimming Pool
-              </li>
-              <li className="flex items-center gap-1">
-                <BsFillInfoCircleFill />
-                Free Airport Shuttle
-              </li>
-              <li className="flex items-center gap-1">
-                <BsFillInfoCircleFill />
-                Pets Allowed
-              </li>
+              {categories[0]?.facilities.map((facility, i) => (
+                <li key={i} className="flex items-center gap-1">
+                  {/* <BsFillInfoCircleFill /> */}
+                  {facility}
+                </li>
+              ))}
             </ul>
           </>
         )}

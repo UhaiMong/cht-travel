@@ -1,5 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import {hotelAPI_URL_Bandarban} from "./hotelsAPI_URL/hotelAPI_URL"
+import { hotelAPI_URL_Bandarban } from "./hotelsAPI_URL/hotelAPI_URL";
+
 export const hotelApi = createApi({
   reducerPath: "hotelApi",
   baseQuery: fetchBaseQuery({

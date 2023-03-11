@@ -9,27 +9,26 @@ import {
 import { useMediaQuery } from "react-responsive";
 import HotelReviewCard from "./HotelReviewCard";
 import NearbyHotelCard from "./NearbyHotelCard";
-import Filter from "../../components/reusable/Filter";
 import RoomsRate from "./RoomsRate";
 import HotelImageGallery from "./HotelImageGallery";
 import { RiChat1Fill } from "react-icons/ri";
 import { FaPaw } from "react-icons/fa";
 import { BiBus } from "react-icons/bi";
 import { VscListSelection } from "react-icons/vsc";
-import { BsCheck, BsGlobe } from "react-icons/bs";
+import { BsGlobe } from "react-icons/bs";
 import AmenitiesCard from "./AmenitiesCard";
-import { amenities } from "../../../public/amenities.js";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useGetSingleHotelQuery } from "../../api/hotelSlice";
 import { useSelector } from "react-redux";
 import moment from "moment/moment";
+import { amenities } from "./amenities";
 
 const Hotel = () => {
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
   const { id } = useParams();
   const { data } = useGetSingleHotelQuery(id);
-  console.log(data)
+  console.log(data);
   const { searchQuery } = useSelector((state) => state.search);
 
   let today = moment(new Date()).format("MMMM DD YYYY");
@@ -53,7 +52,7 @@ const Hotel = () => {
       </div>
     );
   };
-// SERVICE NAV
+  // SERVICE NAV
   const ServicesNav = () => {
     return (
       <>
@@ -71,6 +70,7 @@ const Hotel = () => {
       </>
     );
   };
+  // SERVICE NAV END
 
   return (
     <div className="space-y-8 md:py-20 py-10 customContainer">
@@ -125,7 +125,7 @@ const Hotel = () => {
         </div>
         <section className="h-fit grid-cols-6 bg-white lg:grid">
           <div className="col-span-4">
-            <HotelImageGallery img={data?.imageURL} />
+            <HotelImageGallery hotelImages={data?.imageURL} />
           </div>
           <div className="col-span-2 p-4 space-y-4">
             <div className="flex items-center gap-4">
@@ -235,20 +235,28 @@ const Hotel = () => {
         )}
       </section>
 
-      <section id="googleMap" className="bg-white p-4 rounded">
+      <section
+        id="googleMap"
+        className="bg-white p-4 rounded h-80 mb-5 cursor-zoom-in"
+      >
         <h3 className="font-bold text-black text-lg">Map</h3>
         <div>
-          <img
+          {/* <img
             src="https://i.ibb.co/fqfDqHZ/static-Map.png"
-            className="w-full"
+            className="w-full h-80"
             alt=""
-          />
+          /> */}
+          <iframe
+            className="w-full h-80 border-none"
+            src={data.mapURL}
+            width="100%"
+            height="320"
+            allowFullScreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
       </section>
-
-      {/* <section className="py-10">
-        <Filter />
-      </section> */}
 
       <section id="roomsRates" className="bg-white p-4 rounded">
         <div className="md:flex space-y-2 md:space-y-0 gap-4 items-center">

@@ -5,7 +5,7 @@ import {
   AiOutlineDoubleRight,
 } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import paymentSuccess from "../../assets/images/payment.gif";
+const paymentSuccess = "https://i.ibb.co/f0s6mQT/payment.gif";
 
 const Success = () => {
   return (

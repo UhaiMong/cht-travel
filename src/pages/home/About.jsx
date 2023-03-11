@@ -1,9 +1,11 @@
 import React from "react";
 import { AiOutlineDoubleRight } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import useTitle from "../../hooks/useTitle";
 const chtTravelLogo = "https://i.ibb.co/ypH6jJt/cht-travel-logo-two.png";
 const bdGovtLogo = "https://i.ibb.co/nnZjsq3/bd-Govt-Logo.png";
 const About = () => {
+  useTitle("About")
   const services = [
     { id: "1", service: "Hotel" },
     { id: "2", service: "Tourist Sight " },

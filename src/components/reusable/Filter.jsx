@@ -30,10 +30,9 @@ const Filter = ({ setSearch }) => {
   const fetchData = async () => {
     try {
       const res = await axios.get(
-        "https://cht-travel-server-repo.vercel.app/hotels-bdbn"
+        "https://cht-travel-server-repo.vercel.app/hotels"
       );
       const data = res.data;
-      console.log(data);
       if (data) {
         const filteredData = data.filter((item) => item?.isAvailable === true);
         dispatch(setHotel(filteredData));

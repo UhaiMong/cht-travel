@@ -8,8 +8,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { getHotel } from "../features/searchSlice";
 import Loading from "../components/reusable/Loading";
 
-const staticMapImg = "https://i.ibb.co/w4WJm7b/static-Map-Img.png";
-
 const HotelList = () => {
   const [search, setSearch] = useState("");
   const [data, setHotels] = useState([]);
@@ -45,11 +43,11 @@ const HotelList = () => {
               <div>
                 <h3 className="text-black font-bold mb-2">Map View</h3>
                 <div>
-                  <img
-                    src={staticMapImg}
-                    className="w-full"
-                    alt="staticMapImg"
-                  />
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29551.030164764066!2d92.19773757503263!3d22.206712963809792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30ad6a188414e62b%3A0xa4c3198f81ba90d0!2sBandarban!5e0!3m2!1sen!2sbd!4v1677765933775!5m2!1sen!2sbd"
+                    width="100%"
+                    height="auto"
+                  ></iframe>
                 </div>
               </div>
               <hr />
@@ -111,20 +109,6 @@ const HotelList = () => {
               </div>
             )}
 
-            {/* <div className="flex justify-between bg-white">
-              <div>Short by Recommended</div>
-              <div className="flex justify-between">
-                <div className="flex items-center gap-1 bg-slate-200 px-4 py-2">
-                  <AiOutlineUnorderedList />
-                  List
-                </div>
-                <div className="flex cursor-pointer items-center gap-1 px-4 py-2 hover:bg-slate-200">
-                  <IoLocationSharp />
-                  Map
-                </div>
-              </div>
-            </div> */}
-
             <div>
               <h2>
                 <span className="font-bold text-black">
@@ -155,6 +139,8 @@ const HotelList = () => {
                         image={item?.imageURL}
                         address={item?.address}
                         price={item?.price}
+                        classification={item?.classification}
+                        categories={item?.categories}
                         isTabletOrMobile={isTabletOrMobile}
                       />
                     </Link>

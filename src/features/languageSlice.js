@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { languagesURL } from "../api/languagesAPI/languagesAPI";
 
 const initialState = {
     languages: [],
@@ -8,7 +9,7 @@ const initialState = {
 };
 
 export const getLanguages = createAsyncThunk("languages/getLanguages", async () => {
-    const res = await fetch("https://cht-travel-server-repo.vercel.app/local-language");
+    const res = await fetch(languagesURL);
     const data = await res.json();
     return data;
 })

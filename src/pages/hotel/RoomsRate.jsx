@@ -1,59 +1,80 @@
 import React from "react";
 import { BsFillInfoCircleFill } from "react-icons/bs";
+import { FaHandPointRight } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { useMediaQuery } from "react-responsive";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { addToCart } from "../../features/cartSlice";
 import RoomDetails from "./RoomDetails";
 
 const RoomsRate = ({ categories, hotelData }) => {
   const navigate = useNavigate();
+  const { type, price, descpt, roomCount, facilities, roomImages } = categories;
+  console.log(roomImages);
 
-  const { type, price, descpt, roomCount } = categories;
-
-  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1200px)" });
 
   var hotelprice = Intl.NumberFormat().format(price);
 
   const dispatch = useDispatch();
-  
+
   const handleBookNow = () => {
     dispatch(addToCart(hotelData));
     navigate(`/booking/${hotelData._id}`, { state: categories });
   };
+
+  //   const images = [
+  //     {
+  //       original: `${hotelImages}`,
+  //     },
+  //     {
+  //       original: `${hotelImages}`,
+  //     },
+  //     {
+  //       original: `${hotelImages}`,
+  //     },
+  // ];
+  
   return (
     <div className="flex justify-between items-center px-4 py-10 border-b flex-wrap md:space-y-6 space-y-12">
+      <div>room image here</div>
       <div>
         <div className="flex gap-2">
           <p className="font-bold text-black">{type}</p>
           {/* The button to open modal */}
-          <label htmlFor="my-modal-4">
+          <label htmlFor="roomDetails">
             <span className="underline cursor-pointer">Room Details</span>
           </label>
 
-          <input type="checkbox" id="my-modal-4" className="modal-toggle" />
-          <label htmlFor="my-modal-4" className="modal cursor-pointer">
+          <input type="checkbox" id="roomDetails" className="modal-toggle" />
+          <label htmlFor="roomDetails" className="modal cursor-pointer">
             <div className="modal-box relative w-11/12 max-w-5xl" htmlFor="">
               <label
-                htmlFor="my-modal-4"
+                htmlFor="roomDetails"
                 className="btn btn-sm btn-circle absolute right-2 top-2"
               >
                 ✕
               </label>
-              <RoomDetails />
+              <RoomDetails descpt={descpt} />
             </div>
           </label>
         </div>
-        <p className="flex gap-2 items-center">
-          <BsFillInfoCircleFill />
-          Prepaid - Book Now, Pay Now
-        </p>
         {!isTabletOrMobile && (
-          <p className="flex gap-2 items-center">
-            <BsFillInfoCircleFill />
-            {descpt.slice(0, 100)}
-          </p>
+          <>
+            <p className="flex gap-2 items-center">
+              <BsFillInfoCircleFill />
+              Prepaid - Book Now, Pay Now
+            </p>
+            <ul className="">
+              {facilities.map((facility, i) => (
+                <li className="fex" key={i}>
+                  <FaHandPointRight className="inline mr-3" />
+                  {facility}
+                </li>
+              ))}
+            </ul>
+          </>
         )}
       </div>
 

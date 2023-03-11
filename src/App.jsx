@@ -8,7 +8,8 @@ import { useEffect, useState } from "react";
 import { Toaster } from "react-hot-toast";
 import { setUser, toggleLoading } from "./features/auth/authSlice";
 import ScrollToTop from "react-scroll-to-top";
-import preLoader from "./assets/images/preLoader.gif";
+
+const preLoader = "https://i.ibb.co/PwdR36p/pre-Loader.gif";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);

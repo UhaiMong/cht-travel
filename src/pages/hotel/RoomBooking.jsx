@@ -19,7 +19,6 @@ const RoomBooking = () => {
   const { data } = useGetSingleHotelQuery(id);
   const { address, title, price, categories, imageURL } = data || {};
   const { searchQuery } = useSelector((state) => state.search);
-
   let today = moment(new Date()).format("MMMM Do YYYY");
   const startDate = searchQuery?.startDate;
   const endDate = searchQuery?.endDate;
@@ -197,12 +196,15 @@ const RoomBooking = () => {
           <section className="space-y-3 md:space-y-0 bg-white p-2">
             <div className="flex gap-2">
               <div className="w-32 h-28">
-                <img
-                  className="w-full rounded"
-                  src={imageURL}
-                  // style={{ width: "75px", height: "75px" }}
-                  alt=""
-                />
+                {imageURL.map((img, i) => (
+                  <img
+                    key={i}
+                    className="w-full rounded"
+                    src={img}
+                    // style={{ width: "75px", height: "75px" }}
+                    alt=""
+                  />
+                ))}
               </div>
               <div className="">
                 <h4 className="font-bold text-black">{title}</h4>
