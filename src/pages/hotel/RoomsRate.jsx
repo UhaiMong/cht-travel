@@ -7,6 +7,9 @@ import { useNavigate } from "react-router-dom";
 
 import { addToCart } from "../../features/cartSlice";
 import RoomDetails from "./RoomDetails";
+import "./roomGallery.css";
+import ImageGallery from "react-image-gallery";
+import "react-image-gallery/styles/css/image-gallery.css";
 
 const RoomsRate = ({ categories, hotelData }) => {
   const navigate = useNavigate();
@@ -35,10 +38,23 @@ const RoomsRate = ({ categories, hotelData }) => {
   //       original: `${hotelImages}`,
   //     },
   // ];
-  
+
   return (
-    <div className="flex justify-between items-center px-4 py-10 border-b flex-wrap md:space-y-6 space-y-12">
-      <div>room image here</div>
+    <div className="grid grid-cols-1 md:grid-cols-3 justify-between items-center px-3 py-5 border-b-2 md:space-y-6 space-y-12 gap-4">
+      {/* Room image Gallery  */}
+      <div className="rounded-md">
+        <ImageGallery
+          items={roomImages}
+          showThumbnails={false}
+          showNav={false}
+          renderItem={(roomImages) => (
+            <img
+              src={roomImages}
+              className="room-image w-full object-fill rounded-md"
+            />
+          )}
+        />
+      </div>
       <div>
         <div className="flex gap-2">
           <p className="font-bold text-black">{type}</p>
@@ -60,11 +76,10 @@ const RoomsRate = ({ categories, hotelData }) => {
             </div>
           </label>
         </div>
-        {!isTabletOrMobile && (
-          <>
+          <div>
             <p className="flex gap-2 items-center">
               <BsFillInfoCircleFill />
-              Prepaid - Book Now, Pay Now
+              Prepaid - Book Now
             </p>
             <ul className="">
               {facilities.map((facility, i) => (
@@ -74,8 +89,7 @@ const RoomsRate = ({ categories, hotelData }) => {
                 </li>
               ))}
             </ul>
-          </>
-        )}
+          </div>
       </div>
 
       <div className="flex flex-col space-y-2">
@@ -83,10 +97,10 @@ const RoomsRate = ({ categories, hotelData }) => {
           className="tooltip tooltip-open tooltip-warning tooltip-top"
           data-tip={`Only ${roomCount ? roomCount : 1} room left!`}
         >
-          <h2 className="text-2xl text-black font-bold">BDT {hotelprice}</h2>
+          <h2 className="text-xl text-black font-bold">BDT {hotelprice}</h2>
         </div>
 
-        <button className="btn btn-primary" onClick={handleBookNow}>
+        <button className="btn rounded-md text-white bg-gray-800 shadow-md hover:text-blue-500 hover:underline" onClick={handleBookNow}>
           BOOK NOW
         </button>
       </div>
