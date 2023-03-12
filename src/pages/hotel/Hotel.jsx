@@ -248,7 +248,7 @@ const Hotel = () => {
           /> */}
           <iframe
             className="w-full h-80 border-none"
-            src={data.mapURL}
+            src={data?.mapURL}
             width="100%"
             height="320"
             allowFullScreen=""
