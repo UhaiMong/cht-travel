@@ -21,24 +21,32 @@ const AddHotel = () => {
   // original form submit function
   const submit = (data) => {
     const hotel = {
-      title: data?.name,
-      imageURL: data?.image,
+      title: data?.title,
+      address: data?.location,
+      imageURL: data?.hotelImage,
       price: data?.price,
       totalRoom: data?.room,
       isAvailable: data.status === "true" ? true : false,
-      address: data?.location,
       latitude: data?.latitude,
       longitude: data?.longitude,
       description: data?.description,
+
+      // new update field
+      mapURL: data?.mapURL,
+      registered: data?.registered,
+      country: data?.country,
+      phone: data?.phone,
+      email: data?.email,
+      website: data?.website,
+      city: data?.city,
+      state: data?.state,
+      zip: data?.zip,
+      isParkingSystem: data?.isParkingSystem,
+      ownRestaurant: data?.ownRestaurant,
     };
 
     postHotel(hotel);
   };
-
-  // function for testing purpose
-  // const onSubmit = (data) => {
-  //   console.log(data);
-  // };
 
   return (
     <div className="">
@@ -276,7 +284,8 @@ const AddHotel = () => {
           <input
             type="text"
             id="name"
-            {...register("name", { required: true })}
+            placeholder="Full Name of Hotel"
+            {...register("title", { required: true })}
           />
         </div>
 
@@ -287,9 +296,16 @@ const AddHotel = () => {
           </label>
           <input
             type="text"
-            name="image"
-            id="image"
-            {...register("image", { required: true })}
+            name="hotelImage"
+            id="hotelImage"
+            {...register("hotelImage", { required: true })}
+          />
+          <input
+            type="file"
+            name="hotelImage"
+            accept="image/png, image/gif, image/jpeg,image/jpg"
+            multiple
+            {...register("hotelImage", { required: true })}
           />
         </div>
 
@@ -302,6 +318,7 @@ const AddHotel = () => {
             type="number"
             name="price"
             id="price"
+            placeholder="Average Price"
             {...register("price", { required: true })}
           />
         </div>
@@ -315,6 +332,7 @@ const AddHotel = () => {
             type="number"
             name="room"
             id="room"
+            placeholder="Total Room"
             {...register("room", { required: true })}
           />
         </div>
@@ -357,6 +375,7 @@ const AddHotel = () => {
             type="text"
             name="location"
             id="location"
+            placeholder="Exact Location"
             {...register("location", { required: true })}
           />
         </div>
@@ -369,6 +388,7 @@ const AddHotel = () => {
             className="rounded-md bg-white border border-gray-300  py-2 px-5 text-lg focus:border-primary focus:ring-primary"
             name="latitude"
             id="latitude"
+            placeholder="Eg. 2.4.45"
             {...register("latitude", {
               valueAsNumber: true,
               pattern: {
@@ -386,6 +406,7 @@ const AddHotel = () => {
             className="rounded-md bg-white border border-gray-300  py-2 px-5 text-lg focus:border-primary focus:ring-primary"
             name="longitude"
             id="longitude"
+            placeholder="Eg. 34.34.2"
             {...register("longitude", {
               valueAsNumber: true,
               pattern: {
@@ -404,8 +425,174 @@ const AddHotel = () => {
             type="text"
             name="description"
             id="description"
+            placeholder="Write a short description about your hotel."
             {...register("description", { required: true })}
           />
+        </div>
+        <div className="flex w-full flex-col">
+          <label className="mb-2" htmlFor="mapURL">
+            Hotel Map URL
+            <sup className="text-red-400 font-semibold text-2xl">*</sup>
+          </label>
+          <input
+            type="text"
+            name="mapURL"
+            id="mapURL"
+            placeholder="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3694.339860903968!2d92.2164573148751!3d22.18918688538141!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30ad6b38cb492611%3A0xf2bbfa416823b43b!2sHotel%20Green%20land%20Bandarban!5e0!3m2!1sen!2sbd!4v1677753056733!5m2!1sen!2sbd"
+            {...register("mapURL", { required: true })}
+          />
+        </div>
+        <div className="flex w-full flex-col">
+          <label className="mb-2" htmlFor="country">
+            Country
+            <sup className="text-red-400 font-semibold text-2xl">*</sup>
+          </label>
+          <input
+            type="text"
+            name="country"
+            defaultValue="Bangladesh"
+            id="country"
+            {...register("country", { required: true })}
+          />
+        </div>
+
+        <div className="flex w-full max-w-xs flex-col">
+          <label className="mb-2" htmlFor="phone">
+            Phone
+            <sup className="text-red-400 font-semibold text-2xl">*</sup>
+          </label>
+          <input
+            type="text"
+            name="phone"
+            id="phone"
+            placeholder="0170000000"
+            {...register("phone", { required: true })}
+          />
+        </div>
+        <div className="flex w-full max-w-xs flex-col">
+          <label className="mb-2" htmlFor="email">
+            Support Email
+            <sup className="text-red-400 font-semibold text-2xl">*</sup>
+          </label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="support@gmail.com"
+            {...register("email", { required: true })}
+          />
+        </div>
+        <div className="flex w-full max-w-xs flex-col">
+          <label className="mb-2" htmlFor="website">
+            If You have Own website
+            <sup className="text-red-400 font-semibold text-2xl">*</sup>
+          </label>
+          <input
+            type="url"
+            name="website"
+            id="website"
+            placeholder="www.hotelgreenland.com"
+            {...register("website", { required: true })}
+          />
+        </div>
+        <div className="flex w-full max-w-xs flex-col">
+          <label className="mb-2" htmlFor="city">
+            City
+            <sup className="text-red-400 font-semibold text-2xl">*</sup>
+          </label>
+          <select {...register("city", { required: true })}>
+            <option selected value="Bandarban">
+              Bandarban
+            </option>
+            <option value="Rowangchari">Rowangchari</option>
+            <option value="Ruma">Ruma</option>
+            <option value="Thanchi">Thanchi</option>
+            <option value="Lama">Lama</option>
+            <option value="Naikhongchari">Naikhongchari</option>
+            <option value="Alikodom">Bandarban</option>
+          </select>
+        </div>
+        <div className="flex w-full max-w-xs flex-col">
+          <label className="mb-2" htmlFor="state">
+            State
+            <sup className="text-red-400 font-semibold text-2xl">*</sup>
+          </label>
+          <input
+            type="text"
+            name="state"
+            id="state"
+            defaultValue="Bandarban"
+            {...register("state", { required: true })}
+          />
+        </div>
+        <div className="flex w-full max-w-xs flex-col">
+          <label className="mb-2" htmlFor="zip">
+            ZIP Code
+            <sup className="text-red-400 font-semibold text-2xl">*</sup>
+          </label>
+          <input
+            type="text"
+            name="zip"
+            id="zip"
+            defaultValue="4600"
+            {...register("zip", { required: true })}
+          />
+        </div>
+        <div className="flex w-full max-w-xs flex-col">
+          <label className="mb-2" htmlFor="isParkingSystem">
+            Are there parking available?
+            <sup className="text-red-400 font-semibold text-2xl">*</sup>
+          </label>
+          <div className="flex gap-4">
+            <label htmlFor="">
+              <input
+                type="radio"
+                name="isParkingSystem"
+                value="Yes"
+                id="isParkingSystem"
+                {...register("isParkingSystem", { required: true })}
+              />
+              Yes
+            </label>
+            <label htmlFor="">
+              <input
+                type="radio"
+                name="isParkingSystem"
+                value="No"
+                id="isParkingSystem"
+                {...register("isParkingSystem", { required: true })}
+              />
+              No
+            </label>
+          </div>
+        </div>
+        <div className="flex w-full max-w-xs flex-col">
+          <label className="mb-2" htmlFor="isParkingSystem">
+            Are there own restaurant available?
+            <sup className="text-red-400 font-semibold text-2xl">*</sup>
+          </label>
+          <div className="flex gap-4">
+            <label htmlFor="">
+              <input
+                type="radio"
+                name="ownRestaurant"
+                value="Yes"
+                id="ownRestaurant"
+                {...register("ownRestaurant", { required: true })}
+              />
+              Yes
+            </label>
+            <label htmlFor="">
+              <input
+                type="radio"
+                name="ownRestaurant"
+                value="No"
+                id="ownRestaurant"
+                {...register("ownRestaurant", { required: true })}
+              />
+              No
+            </label>
+          </div>
         </div>
 
         <>

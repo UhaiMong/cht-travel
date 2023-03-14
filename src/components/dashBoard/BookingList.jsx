@@ -14,7 +14,7 @@ import Loading from "../reusable/Loading";
 const BookingList = () => {
   const [bookings, setBookings] = useState([]);
 
-  const domain = "https://cht-travel-server-repo.vercel.app/api/bookings";
+  const domain = "http://api.hilltractstech.com/api/bookings";
 
   async function getBookings() {
     try {

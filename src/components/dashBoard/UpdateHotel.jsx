@@ -11,9 +11,7 @@ const UpdateHotel = () => {
 
   useEffect(() => {
     async function makeGetRequest() {
-      let res = await axios.get(
-        `https://cht-travel-server-repo.vercel.app/hotel/${id}`
-      );
+      let res = await axios.get(`http://api.hilltractstech.com/hotel/${id}`);
       let data = res.data;
       setData(data);
     }

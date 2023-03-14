@@ -1,2 +1,2 @@
 
-export const languagesURL = 'https://cht-travel-server-repo.vercel.app/local-language';
+export const languagesURL = 'http://api.hilltractstech.com/local-language';
