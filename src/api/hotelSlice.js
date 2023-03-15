@@ -13,7 +13,11 @@ export const hotelApi = createApi({
       providesTags: ["Hotels"],
     }),
     addHotel: builder.mutation({
-      query: (data) => ({ url: "addHotels", method: "POST", body: data }),
+      query: (data) => ({
+        url: "addHotels",
+        method: "POST",
+        body: data
+      }),
       invalidatesTags: ["Hotels"],
     }),
     removeHotel: builder.mutation({

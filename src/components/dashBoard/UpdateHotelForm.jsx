@@ -18,7 +18,7 @@ const UpdateHotelForm = ({ preloadedValues }) => {
 
   const [hotelId, setHotelId] = useState(id);
 
-  const domain = "https://cht-travel-server-repo.vercel.app";
+  const domain = "http://api.hilltractstech.com";
   //   const domain = "http://localhost:5000";
 
   const [enabled, setEnabled] = useState(data?.isAvailable);

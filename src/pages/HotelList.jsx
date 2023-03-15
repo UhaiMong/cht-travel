@@ -137,6 +137,7 @@ const HotelList = () => {
                       <SuggestedHotelCard
                         hotel_name={item?.title}
                         image={item?.imageURL}
+                        mapURL={item?.mapURL}
                         address={item?.address}
                         price={item?.price}
                         classification={item?.classification}

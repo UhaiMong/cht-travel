@@ -15,7 +15,7 @@ import Loading from "../reusable/Loading";
 const UserList = () => {
   const [users, setUsers] = useState([]);
 
-  const domain = "https://cht-travel-server-repo.vercel.app/api/users";
+  const domain = "http://api.hilltractstech.com/api/users";
 
   async function getUsers() {
     try {
