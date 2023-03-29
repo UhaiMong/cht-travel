@@ -24,7 +24,7 @@ const OTPVerification = () => {
   };
 
   return (
-    <div className="mx-auto w-[500px] my-9">
+    <div className="mx-auto w-[500px] my-9 h-[100vh]">
       <form onSubmit={handleSubmit}>
         <label>
           Enter OTP:
