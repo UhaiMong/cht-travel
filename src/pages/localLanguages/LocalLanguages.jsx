@@ -28,6 +28,7 @@ const LocalLanguages = () => {
   };
 
   const dispatch = useDispatch();
+  
   const { languages, isLoading } = useSelector((state) => state.languages);
   const filteredLanguage = useSelector((state) => state.filteredLanguage);
   useEffect(() => {

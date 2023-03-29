@@ -129,6 +129,7 @@ const Navbar = () => {
             )}
           </ul>
         </div>
+        
         <Link to="/">
           {isTabletOrMobile ? (
             <span className="font-bold text-xl normal-case">CHT-Travel</span>

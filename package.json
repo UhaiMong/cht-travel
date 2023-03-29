@@ -47,13 +47,13 @@
   "main": "vite.config.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/taibislamdipu/cht-travel-client-repo.git"
+    "url": "."
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/taibislamdipu/cht-travel-client-repo/issues"
+    "url": "."
   },
   "homepage": "."
 }
