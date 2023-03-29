@@ -8,6 +8,7 @@ import { getLanguages } from "../../features/languageSlice";
 import { ethnics } from "./allEthnicGroup";
 import { conditionText } from "./conditionText";
 import LocalLanguage from "./LocalLanguage";
+import OTPVerification from "./OTPVerification";
 
 const LocalLanguages = () => {
   const [phone, setPhone] = useState();
@@ -29,7 +30,7 @@ const LocalLanguages = () => {
   };
 
   const dispatch = useDispatch();
-  
+
   const { languages, isLoading } = useSelector((state) => state.languages);
   const filteredLanguage = useSelector((state) => state.filteredLanguage);
   useEffect(() => {
@@ -80,7 +81,9 @@ const LocalLanguages = () => {
 
   return (
     <>
+      {/* <OTPVerification/> */}
       {/* subscription modal */}
+      <Link to="/local-language/otp-verify">Otp page</Link>
       <form action="" onSubmit={handleSubscription}>
         <input
           type="checkbox"
@@ -119,7 +122,7 @@ const LocalLanguages = () => {
                 onClick={handleSubmit}
                 className="btn outline-none border-none bg-gradient-to-r from-green-400 to-blue-500 text-white"
               >
-                Confirm
+                <Link to="/local-language/otp-verify">Confirm</Link>
               </button>
             </div>
           </div>

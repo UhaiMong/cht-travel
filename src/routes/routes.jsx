@@ -24,6 +24,7 @@ import AdminRoute from "../utils/AdminRoute";
 import PrivateRoute from "../utils/PrivateRoute.jsx";
 import TouristSpotList from "../pages/touristSpot/TouristSpotList";
 import LocalLanguages from "../pages/localLanguages/LocalLanguages";
+import OTPVerification from "../pages/localLanguages/OTPVerification";
 
 const routes = createBrowserRouter([
   {
@@ -81,13 +82,23 @@ const routes = createBrowserRouter([
       },
       {
         path: "/tourist-spot",
-        element: <TouristSpotList/>
+        element: <TouristSpotList />,
       },
       {
         path: "/local-language",
-        element: <PrivateRoute>
-          <LocalLanguages/>
-        </PrivateRoute>
+        element: (
+          <PrivateRoute>
+            <LocalLanguages />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/local-language/otp-verify",
+        element: (
+          <PrivateRoute>
+            <OTPVerification />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/booking/:id",
