@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
@@ -17,7 +18,7 @@ const LocalLanguages = () => {
     event.preventDefault();
     const form = event.target;
     const phoneNumber = form.tel.value;
-    setPhone(phoneNumber)
+    setPhone(phoneNumber);
     console.log(phone);
     form.reset();
     toast.success("Your request is accepted.");
@@ -60,6 +61,22 @@ const LocalLanguages = () => {
 
   const activeClass = "bg-gray-400 text-white border-none";
 
+  const [number, setNumber] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const data = {
+      subscriberId: `tel:88${number}`,
+      applicationId: "APP_083495",
+      password: "6de46320cb9d7e10f612e390f2add646",
+    };
+    console.log(data);
+    axios.post(
+      "https://developer.bdapps.com/otp/request",
+      JSON.stringify(data)
+    );
+  };
+
   return (
     <>
       {/* subscription modal */}
@@ -87,6 +104,7 @@ const LocalLanguages = () => {
               placeholder="01800000xxx"
               name="tel"
               className="w-full outline-pink-600 active:outline-pink-600"
+              onChange={(e) => setNumber(e.target.value)}
             />
 
             <div className="modal-action">
@@ -96,7 +114,10 @@ const LocalLanguages = () => {
               >
                 Cancel!
               </label>
-              <button className="btn outline-none border-none bg-gradient-to-r from-green-400 to-blue-500 text-white">
+              <button
+                onClick={handleSubmit}
+                className="btn outline-none border-none bg-gradient-to-r from-green-400 to-blue-500 text-white"
+              >
                 Confirm
               </button>
             </div>
