@@ -8,7 +8,6 @@ import { getLanguages } from "../../features/languageSlice";
 import { ethnics } from "./allEthnicGroup";
 import { conditionText } from "./conditionText";
 import LocalLanguage from "./LocalLanguage";
-import OTPVerification from "./OTPVerification";
 
 const LocalLanguages = () => {
   const [phone, setPhone] = useState();
