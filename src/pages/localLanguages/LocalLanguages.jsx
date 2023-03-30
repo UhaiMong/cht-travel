@@ -15,15 +15,15 @@ const LocalLanguages = () => {
   const [languageType, setLanguageType] = useState("marma");
   const subScriptionID = "abcd123";
 
-  const handleSubscription = (event) => {
-    event.preventDefault();
-    const form = event.target;
-    const phoneNumber = form.tel.value;
-    setPhone(phoneNumber);
-    console.log(phone);
-    form.reset();
-    toast.success("Your request is accepted.");
-  };
+  // const handleSubscription = (event) => {
+  //   event.preventDefault();
+  //   const form = event.target;
+  //   const phoneNumber = form.tel.value;
+  //   setPhone(phoneNumber);
+  //   console.log(phone);
+  //   form.reset();
+  //   toast.success("Your request is accepted.");
+  // };
 
   const languageHandler = () => {
     console.log(languageType);
@@ -64,6 +64,7 @@ const LocalLanguages = () => {
   const activeClass = "bg-gray-400 text-white border-none";
 
   const [number, setNumber] = useState("");
+  const [openModal, setOpenModal] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -73,10 +74,16 @@ const LocalLanguages = () => {
       password: "6de46320cb9d7e10f612e390f2add646",
     };
     console.log(data);
-    axios.post(
-      "https://developer.bdapps.com/otp/request",
-      JSON.stringify(data)
-    );
+    axios
+      .post("https://developer.bdapps.com/otp/request", JSON.stringify(data))
+      .then((res) => {
+        console.log(res);
+        setOpenModal(true);
+        setNumber("");
+      })
+      .then((err) => {
+        console.log(err);
+      });
   };
 
   return (
@@ -84,7 +91,7 @@ const LocalLanguages = () => {
       {/* <OTPVerification/> */}
       {/* subscription modal */}
       <Link to="/local-language/otp-verify">Otp page</Link>
-      <form action="" onSubmit={handleSubscription}>
+      <form action="" onSubmit={(e) => e.preventDefault()}>
         <input
           type="checkbox"
           id="subscription-modal"
@@ -122,7 +129,7 @@ const LocalLanguages = () => {
                 onClick={handleSubmit}
                 className="btn outline-none border-none bg-gradient-to-r from-green-400 to-blue-500 text-white"
               >
-                <Link to="/local-language/otp-verify">Confirm</Link>
+                Confirm
               </button>
             </div>
           </div>
