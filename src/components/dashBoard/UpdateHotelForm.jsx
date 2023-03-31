@@ -18,7 +18,7 @@ const UpdateHotelForm = ({ preloadedValues }) => {
 
   const [hotelId, setHotelId] = useState(id);
 
-  const domain = "http://api.hilltractstech.com";
+  const domain = "https://api.hilltractstech.com";
   //   const domain = "http://localhost:5000";
 
   const [enabled, setEnabled] = useState(data?.isAvailable);

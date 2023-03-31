@@ -26,7 +26,7 @@ const PaymentForm = ({ price, title }) => {
     data.startDate = startDate;
     data.endDate = endDate;
 
-    fetch("http://api.hilltractstech.com/init", {
+    fetch("https://api.hilltractstech.com/init", {
       method: "POST",
       headers: {
         "content-type": "application/json",

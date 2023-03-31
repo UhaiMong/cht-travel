@@ -1,2 +1,2 @@
 
-export const languagesURL = 'http://api.hilltractstech.com/local-language';
+export const languagesURL = 'https://api.hilltractstech.com/local-language';

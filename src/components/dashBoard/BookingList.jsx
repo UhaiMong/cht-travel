@@ -14,7 +14,7 @@ import Loading from "../reusable/Loading";
 const BookingList = () => {
   const [bookings, setBookings] = useState([]);
 
-  const domain = "http://api.hilltractstech.com/api/bookings";
+  const domain = "https://api.hilltractstech.com/api/bookings";
 
   async function getBookings() {
     try {

@@ -24,13 +24,26 @@ const OTPVerification = () => {
   };
 
   return (
-    <div className="mx-auto w-[500px] my-9 h-[100vh]">
-      <form onSubmit={handleSubmit}>
+    <div className="mx-auto md:w-[50%] w-[60%] my-9 h-[100vh]">
+      <form autoComplete="off" onSubmit={handleSubmit}>
         <label>
           Enter OTP:
-          <input className="border-2 w-full bg-slate-100 bordered" type="text" value={otp} onChange={handleInputChange} />
-        </label><br/><br/>
-        <button type="submit" className="btn outline-none border-none bg-gradient-to-r from-green-400 to-blue-500 text-white">Verify OTP</button>
+          <input
+            autoComplete="off"
+            className="border-2 w-full bg-slate-100 bordered"
+            type="text"
+            value={otp}
+            onChange={handleInputChange}
+          />
+        </label>
+        <br />
+        <br />
+        <button
+          type="submit"
+          className="btn outline-none border-none bg-gradient-to-r from-green-400 to-blue-500 text-white"
+        >
+          Verify OTP
+        </button>
       </form>
       {error && <p>{error}</p>}
     </div>

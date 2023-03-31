@@ -15,7 +15,7 @@ import Loading from "../reusable/Loading";
 const UserList = () => {
   const [users, setUsers] = useState([]);
 
-  const domain = "http://api.hilltractstech.com/api/users";
+  const domain = "https://api.hilltractstech.com/api/users";
 
   async function getUsers() {
     try {

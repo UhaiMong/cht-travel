@@ -29,7 +29,7 @@ const Filter = ({ setSearch }) => {
 
   const fetchData = async () => {
     try {
-      const res = await axios.get("http://api.hilltractstech.com/hotels");
+      const res = await axios.get("https://api.hilltractstech.com/hotels");
       const data = res.data;
       if (data) {
         const filteredData = data.filter((item) => item?.isAvailable === true);
@@ -56,7 +56,7 @@ const Filter = ({ setSearch }) => {
     // call api
     // const fetchData = async () => {
     //   const res = await fetch(
-    //     "http://api.hilltractstech.com/hotels"
+    //     "https://api.hilltractstech.com/hotels"
     //   );
     //   const data = await res.json();
     //   const filteredData = data?.filter((item) => item?.isAvailable === true);

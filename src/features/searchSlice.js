@@ -10,7 +10,7 @@ const initialState = {
 
 export const getHotel = createAsyncThunk("auth/getHotel", async () => {
   const res = await fetch(
-    "http://api.hilltractstech.com/hotels"
+    "https://api.hilltractstech.com/hotels"
   );
   const data = await res.json();
   return data;
